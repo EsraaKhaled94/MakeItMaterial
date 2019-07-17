@@ -54,7 +54,6 @@ public class ArticleDetailFragment extends Fragment implements
     private ObservableScrollView mScrollView;
     private DrawInsetsFrameLayout mDrawInsetsFrameLayout;
     private ColorDrawable mStatusBarColorDrawable;
-    private Toolbar toolbar;
 
     private int mTopInset;
     private View mPhotoContainerView;
@@ -67,7 +66,7 @@ public class ArticleDetailFragment extends Fragment implements
     // Use default locale format
     private SimpleDateFormat outputFormat = new SimpleDateFormat();
     // Most time functions can only handle 1902 - 2037
-    private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2, 1, 1);
+    private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2,1,1);
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -140,8 +139,6 @@ public class ArticleDetailFragment extends Fragment implements
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
         mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
 
-        toolbar = mRootView.findViewById(R.id.app_bar);
-        toolbar.setTitle(getString(R.string.app_name));
         mStatusBarColorDrawable = new ColorDrawable(0);
 
         mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
@@ -260,7 +257,7 @@ public class ArticleDetailFragment extends Fragment implements
         } else {
             mRootView.setVisibility(View.GONE);
             titleView.setText("N/A");
-            bylineView.setText("N/A");
+            bylineView.setText("N/A" );
             bodyView.setText("N/A");
         }
     }
